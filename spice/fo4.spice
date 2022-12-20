@@ -1,0 +1,50 @@
+*
+*  FO4 Module -- Students should implement the FO4 circuit that they see in
+*  the Module 0 handout. Note that we already have a 2-input and gate
+*  instantiated in this design. This both serves as an example of how a gate
+*  is instantiated as well as implements a reset which allows us to put the
+*  ring oscillator into a known state for digital simulations.
+*
+*  <SKY130_ROOT>/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+*
+*  Open this file above to see the spice models for the standard
+*  cell library. This will be helpful to figure out the names of the cells as
+*  well as orders of the input and output pins.
+*
+
+.SUBCKT fo4 reset_i probe_in_o probe_out_o 
+  * reset_i: reset input
+  * probe_in_o: first output probe
+  * probe_out_o: second output probe
+  
+  * Or gate instance 
+  Xreset 
+    * Input pin 'A'
+    +reset_i
+    * Input pin 'B' TODO: end of ring connects here! (Replace 'B_PIN')
+    +B_PIN
+    * Ground pin 'VNGD'
+    +VSS 
+    * Ground pin 'VNB' (negative body)
+    +VSS 
+    * Power pin 'VPB' (positive body)
+    +VDD 
+    * Power pin 'VPWR'
+    +VDD 
+    * Output pin 'X' TODO: beginning of ring connects here! (Replace 'X_PIN')
+    +X_PIN
+    +sky130_fd_sc_hd__or2_1 
+  
+  * Alternitavely, the above gate could have been written in a single line as such:
+  *       "Xreset reset_i B_PIN VSS VSS VDD VDD X_PIN  sky130_fd_sc_hd__or2_1"
+
+  * TODO: Implement the FO4 ring below! Make sure that:
+  *    1. The ring ends at the B pin of the reset NOR gate above.
+  *    2. The ring begins with the X pin of the reset NOR gate above.
+  *    3. Connect the probe_in_o pin to the input of the inverter you want to measure the propgation delay through.
+  *       (NOTE: you should choose an inverter several stages away from the reset gate, so the fo4 will not be influenced by it.)
+  *    4. Connect the probe_out_o pin to the output of the inverter you want to measure the propgation delay through.
+
+
+  
+.ENDS
