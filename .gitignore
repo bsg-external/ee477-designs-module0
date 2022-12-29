@@ -1,0 +1,8 @@
+build/
+DVEfiles/
+*.json
+*.vpd
+*.vcd
+*.log
+sdfAnnotateInfo
+ucli.key
