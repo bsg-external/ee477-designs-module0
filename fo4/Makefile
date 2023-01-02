@@ -1,6 +1,6 @@
 # Makefile for Module 0 fo4 design
 
-TOP_DIR := $(realpath ../../ee477-modules)
+TOP_DIR := $(realpath ../../ee477-hammer-cad)
 OBJ_DIR := build
 INPUT_CFGS := cfg/cfg.yml
 TB_CFGS := cfg/tb.yml
