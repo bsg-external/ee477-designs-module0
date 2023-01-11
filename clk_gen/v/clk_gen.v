@@ -43,14 +43,14 @@ module clk_gen
     reset
         (.A(reset_i)
         ,.B(/* TODO: connect to the end of the ring oscillator */)
-        ,.X(reset_to_reset_bal_n)
+        ,.Y(reset_to_reset_bal_n)
         );
 
     sky130_fd_sc_hd__nor2_1
     reset_bal
         (.A(reset_i)
         ,.B(reset_to_reset_bal_n)
-        ,.X(/* TODO: connect to the start of the ring oscillator */)
+        ,.Y(/* TODO: connect to the start of the ring oscillator */)
         );
 
 endmodule
