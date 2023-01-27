@@ -4,5 +4,8 @@ DVEfiles/
 *.vpd
 *.vcd
 *.log
+novas.conf
+novas.rc
+verdiLog
 sdfAnnotateInfo
 ucli.key

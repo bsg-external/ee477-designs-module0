@@ -1,9 +1,8 @@
 module fo4_tb;  
 
     initial begin
-        $vcdpluson();
-        $vcdplusmemon();
-        $vcdplusautoflushon();
+        $fsdbDumpfile("waveform.fsdb");
+        $fsdbDumpvars();
     end
 
     logic dut_reset, dut_probe_in, dut_probe_out;
